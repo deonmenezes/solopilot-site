@@ -154,6 +154,81 @@
         </div>
       </section>
 
+      <section id="integrations" class="section integrations">
+        <div class="section-head">
+          <p class="eyebrow">Live Integrations</p>
+          <h2>Connect APIs Securely Through Server Routes</h2>
+        </div>
+
+        <div class="integration-status">
+          <article class="status-card">
+            <h3>Apify</h3>
+            <p id="status-apify">Checking...</p>
+          </article>
+          <article class="status-card">
+            <h3>GitHub</h3>
+            <p id="status-github">Checking...</p>
+          </article>
+          <article class="status-card">
+            <h3>Vercel Deploy Hook</h3>
+            <p id="status-vercel">Checking...</p>
+          </article>
+          <article class="status-card">
+            <h3>Email Bridge</h3>
+            <p id="status-email">Checking...</p>
+          </article>
+        </div>
+
+        <div class="ops-grid">
+          <form id="scrape-form" class="ops-card">
+            <h3>1) Scrape Cafes (Apify)</h3>
+            <label for="scrape-search">Search</label>
+            <input id="scrape-search" name="search" type="text" placeholder="cafes in dubai marina" required />
+            <label for="scrape-max">Max Results</label>
+            <input id="scrape-max" name="maxCafes" type="number" min="1" max="50" value="10" required />
+            <button class="btn btn-primary" type="submit">Run Scrape</button>
+          </form>
+
+          <form id="repo-form" class="ops-card">
+            <h3>2) Create GitHub Repo</h3>
+            <label for="repo-name">Repo Name</label>
+            <input id="repo-name" name="repoName" type="text" placeholder="cafe-sunrise-site" required />
+            <label for="repo-description">Description</label>
+            <input id="repo-description" name="description" type="text" placeholder="Generated website for cafe outreach" />
+            <button class="btn btn-primary" type="submit">Create Repo</button>
+          </form>
+
+          <form id="deploy-form" class="ops-card">
+            <h3>3) Trigger Vercel Deploy</h3>
+            <label for="deploy-branch">Branch</label>
+            <input id="deploy-branch" name="branch" type="text" value="main" />
+            <button class="btn btn-primary" type="submit">Trigger Deploy</button>
+          </form>
+
+          <form id="email-form" class="ops-card">
+            <h3>4) Send Email</h3>
+            <label for="email-to">To</label>
+            <input id="email-to" name="to" type="email" placeholder="owner@cafename.com" required />
+            <label for="email-subject">Subject</label>
+            <input id="email-subject" name="subject" type="text" placeholder="I built a new website for your cafe" required />
+            <label for="email-body">Message</label>
+            <textarea
+              id="email-body"
+              name="body"
+              rows="4"
+              placeholder="Hey, I mocked up a faster mobile-friendly site for your cafe..."
+              required
+            ></textarea>
+            <button class="btn btn-primary" type="submit">Send Email</button>
+          </form>
+        </div>
+
+        <div class="api-output">
+          <h3>Operation Log</h3>
+          <pre id="api-log">Ready.</pre>
+        </div>
+      </section>
+
       <section id="launch" class="section cta">
         <p class="eyebrow">Ready To Launch</p>
         <h2>Turn Website Delivery Into A Repeatable System</h2>
