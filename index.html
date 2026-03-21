@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Solopilot helps solo freelancers scrape cafe leads, generate websites, deploy to Vercel, and send personalized outreach from one dashboard."
+    />
+    <title>Solopilot | Freelancer Website + Outreach Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Solopilot home">
+        <span class="brand-mark">SP</span>
+        Solopilot
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">
+        Menu
+      </button>
+      <nav id="nav-links" class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#launch">Launch</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <p class="eyebrow">Built For Solo Freelancers</p>
+        <h1>Generate Client Websites And Send Personalized Outreach In Minutes</h1>
+        <p class="hero-copy">
+          Solopilot runs your full pipeline: scrape cafe leads, generate custom sites, push to GitHub, deploy to
+          Vercel, and send outreach emails with live links.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#launch">Start Building</a>
+          <a class="btn btn-ghost" href="#workflow">See Workflow</a>
+        </div>
+        <div class="stat-row">
+          <article class="stat-card">
+            <p class="stat-label">Leads Processed</p>
+            <p class="stat-value" data-target="240">0</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Sites Shipped</p>
+            <p class="stat-value" data-target="87">0</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Emails Delivered</p>
+            <p class="stat-value" data-target="1320">0</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Core Features</p>
+          <h2>Everything You Need In One Local-First Stack</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Google Maps Lead Scraping</h3>
+            <p>
+              Pull cafe leads from Apify with business details, contact data, and quality filters ready for outreach.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Website Generator</h3>
+            <p>
+              Auto-build personalized websites from lead data with editable sections so every draft feels custom.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>GitHub + Vercel Shipping</h3>
+            <p>
+              One click to push code to GitHub and deploy live through Vercel CLI with URL and status tracking.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Personalized Outreach</h3>
+            <p>
+              Draft and send high-context emails tied to the exact deployed site so the owner can review instantly.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="section workflow">
+        <div class="section-head">
+          <p class="eyebrow">Pipeline</p>
+          <h2>From Raw Lead To Sent Proposal</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>1. Scrape</h3>
+            <p>Collect cafe leads through Apify and enrich each business profile.</p>
+          </li>
+          <li>
+            <h3>2. Generate</h3>
+            <p>Create a website draft tailored to the lead's niche and local market.</p>
+          </li>
+          <li>
+            <h3>3. Deploy</h3>
+            <p>Push code with GitHub CLI and publish production with Vercel CLI.</p>
+          </li>
+          <li>
+            <h3>4. Send</h3>
+            <p>Send personalized email outreach with the deployed link and value pitch.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section id="dashboard" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Control Center</p>
+          <h2>Premium Dashboard Built For Daily Execution</h2>
+        </div>
+        <div class="dashboard-mock">
+          <aside class="dash-panel">
+            <h3>Today Queue</h3>
+            <ul>
+              <li>18 new cafes scraped</li>
+              <li>7 websites waiting deploy</li>
+              <li>12 emails pending send</li>
+            </ul>
+          </aside>
+          <aside class="dash-panel">
+            <h3>Pipeline</h3>
+            <ul>
+              <li>New: 42</li>
+              <li>Generated: 19</li>
+              <li>Deployed: 14</li>
+              <li>Sent: 31</li>
+            </ul>
+          </aside>
+          <aside class="dash-panel">
+            <h3>Recent Activity</h3>
+            <ul>
+              <li>Deployed beanandbrew-cafe.vercel.app</li>
+              <li>Email sent to owner@cornercup.com</li>
+              <li>Reply received from Harbor Roast</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="launch" class="section cta">
+        <p class="eyebrow">Ready To Launch</p>
+        <h2>Turn Website Delivery Into A Repeatable System</h2>
+        <p>
+          Solopilot gives you a focused dashboard to generate, ship, and sell websites with less manual work and higher output.
+        </p>
+        <a class="btn btn-primary" href="mailto:hello@solopilot.local?subject=Solopilot%20Demo">Book A Demo</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Solopilot - Website Generation, Deployment, and Outreach for Solo Freelancers.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
