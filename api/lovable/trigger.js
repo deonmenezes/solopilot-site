@@ -6,13 +6,13 @@ const { methodNotAllowed, parseJsonBody, sendJson } = require("../_lib/http");
 module.exports = async (req, res) => {
   if (req.method !== "POST") return methodNotAllowed(res, "POST");
 
-  const hookUrl = process.env.VERCEL_DEPLOY_HOOK_URL;
-  if (!hookUrl) return sendJson(res, 500, { error: "VERCEL_DEPLOY_HOOK_URL is not configured." });
+  const triggerUrl = process.env.LOVABLE_TRIGGER_URL;
+  if (!triggerUrl) return sendJson(res, 500, { error: "LOVABLE_TRIGGER_URL is not configured." });
 
   const body = parseJsonBody(req);
   const branch = String(body.branch || "main");
 
-  const trigger = await fetchJson(hookUrl, {
+  const trigger = await fetchJson(triggerUrl, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ branch }),
@@ -20,14 +20,14 @@ module.exports = async (req, res) => {
 
   if (!trigger.ok) {
     return sendJson(res, trigger.status, {
-      error: "Vercel deploy trigger failed.",
+      error: "Lovable trigger failed.",
       details: trigger.body,
     });
   }
 
   return sendJson(res, 200, {
     ok: true,
-    message: "Deploy hook triggered.",
+    message: "Lovable trigger sent.",
     response: trigger.body,
   });
 };

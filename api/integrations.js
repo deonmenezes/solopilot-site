@@ -8,13 +8,13 @@ module.exports = async (req, res) => {
 
   const apifyToken = process.env.APIFY_API_TOKEN || process.env.APIFY_TOKEN;
   const githubToken = process.env.GITHUB_TOKEN;
-  const vercelDeployHook = process.env.VERCEL_DEPLOY_HOOK_URL;
+  const lovableTriggerUrl = process.env.LOVABLE_TRIGGER_URL;
   const emailBridgeUrl = process.env.GWS_BRIDGE_URL;
 
   const integrations = {
     apify: { configured: Boolean(apifyToken), ok: false },
     github: { configured: Boolean(githubToken), ok: false },
-    vercel: { configured: Boolean(vercelDeployHook), ok: false },
+    lovable: { configured: Boolean(lovableTriggerUrl), ok: false },
     email: { configured: Boolean(emailBridgeUrl), ok: false },
   };
 
@@ -40,8 +40,8 @@ module.exports = async (req, res) => {
     if (check.ok && check.body?.login) integrations.github.account = check.body.login;
   }
 
-  integrations.vercel.ok = integrations.vercel.configured;
-  if (!integrations.vercel.ok) integrations.vercel.error = "Missing VERCEL_DEPLOY_HOOK_URL";
+  integrations.lovable.ok = integrations.lovable.configured;
+  if (!integrations.lovable.ok) integrations.lovable.error = "Missing LOVABLE_TRIGGER_URL";
 
   if (integrations.email.configured) {
     integrations.email.ok = true;

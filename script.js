@@ -42,7 +42,7 @@ const logEl = document.querySelector("#api-log");
 const statusEls = {
   apify: document.querySelector("#status-apify"),
   github: document.querySelector("#status-github"),
-  vercel: document.querySelector("#status-vercel"),
+  lovable: document.querySelector("#status-lovable"),
   email: document.querySelector("#status-email"),
 };
 
@@ -77,7 +77,7 @@ const refreshStatuses = async () => {
     if (!res.ok) throw new Error(json.error || "Failed to load integration status");
     statusEls.apify.textContent = statusLabel(json.integrations.apify);
     statusEls.github.textContent = statusLabel(json.integrations.github);
-    statusEls.vercel.textContent = statusLabel(json.integrations.vercel);
+    statusEls.lovable.textContent = statusLabel(json.integrations.lovable);
     statusEls.email.textContent = statusLabel(json.integrations.email);
     appendLog("Integration check complete", json.integrations);
   } catch (err) {
@@ -126,12 +126,12 @@ if (deployForm) {
     event.preventDefault();
     const formData = new FormData(deployForm);
     try {
-      const result = await callApi("/api/vercel/deploy", {
+      const result = await callApi("/api/lovable/trigger", {
         branch: formData.get("branch"),
       });
-      appendLog("Vercel deploy triggered", result);
+      appendLog("Lovable build triggered", result);
     } catch (err) {
-      appendLog("Vercel deploy failed", String(err.message || err));
+      appendLog("Lovable build failed", String(err.message || err));
     }
   });
 }
